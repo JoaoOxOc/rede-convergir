@@ -1,0 +1,95 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/banner",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "ContentManagementService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "cms.read", "cms.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/banner/public",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/get/public",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "ContentManagementService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/banner/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "SwaggerKey": "ContentManagementService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "cms.read", "cms.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/banner/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/update",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "cms.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/banner/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "cms.write" ]
+      }
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "ContentManagementService",
+      "Config": [
+        {
+          "Name": "ContentManagementService API",
+          "Version": "v1",
+          "Url": "http://tpcmservice:3030/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

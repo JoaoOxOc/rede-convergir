@@ -1,0 +1,4 @@
+django~=2.2
+djangorestframework==3.13.1
+psycopg2==2.8.6
+numpy==1.22.3

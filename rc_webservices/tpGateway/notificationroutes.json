@@ -1,0 +1,51 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/notifications/pushNotification",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpnotificationservice",
+          "Port": 3040
+        }
+      ],
+      "UpstreamPathTemplate": "/notify/pushNotification",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "Notifications"
+    },
+    {
+      "DownstreamPathTemplate": "/log-notification",
+      "DownstreamScheme": "ws",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpnotificationservice",
+          "Port": 3040
+        }
+      ],
+      "UpstreamPathTemplate": "/subscribe/log-notifications"
+    },
+    {
+      "DownstreamPathTemplate": "/log-notification/negotiate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpnotificationservice",
+          "Port": 3040
+        }
+      ],
+      "UpstreamPathTemplate": "/subscribe/log-notifications/negotiate"
+    }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "NotificationsService",
+      "Config": [
+        {
+          "Name": "NotificationsService API",
+          "Version": "v1",
+          "Url": "http://tpnotificationservice:3040/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

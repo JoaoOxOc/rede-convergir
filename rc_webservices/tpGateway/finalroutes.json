@@ -1,0 +1,1343 @@
+{
+  "Routes": [
+    // User service routes
+    {
+      "DownstreamPathTemplate": "/api/authenticate/fingerprint",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/fingerprint",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/authenticate/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/login",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "UserService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/authenticate/search-user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/search-user",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "UserService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/authenticate/logout",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/logout",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "user.read" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/authenticate/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/register",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "UserService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/authenticate/refresh-token",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/refresh",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "UserService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/authenticate/recover-password-request",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/recover",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "UserService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/authenticate/reset-password",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/reset",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/authenticate/confirm-email",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/confirmemail",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey"
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/client",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/app/client/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "client.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/client/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/app/client/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "client.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/client/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/app/clientupdate",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "client.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/client/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/app/clientregister",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "client.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/settings",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/usersettings/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "settings.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/settings/userPublicSettings",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/usersettings/public/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/settings/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/usersettings/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "settings.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/settings/edit",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/usersettings/edit",
+      "UpstreamHttpMethod": [ "Put" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "settings.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/search-association",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/association/search",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "UserService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/validate-vat",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/association/validatevat",
+      "UpstreamHttpMethod": [ "Post" ],
+      "SwaggerKey": "UserService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/association",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associations/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write", "associationusers.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associations/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write", "associationusers.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associations/update",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write", "associationusers.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associations/create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write", "associationusers.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/resend",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associations/resend",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/approve",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associations/approve",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/delete",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associations/delete",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/profile",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/association/profile",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "association.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/association/profile",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/association/profile",
+      "UpstreamHttpMethod": [ "Put" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "association.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/associationType",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associationTypes/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/associationType/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associationTypes/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/associationType/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associationTypes/update",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/associationType/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associationTypes/create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/associationType/public",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/associationTypes/public/get",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    // user management controllers - users, profiles and scopes
+    {
+      "DownstreamPathTemplate": "/api/user",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/users/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write", "associationusers.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/users/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/users/update",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/updaterole",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/users/updaterole",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write", "associationusers.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/profile",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/profile",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "user.read", "users.read" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/profile",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/user/profile",
+      "UpstreamHttpMethod": [ "Put" ],
+      "SwaggerKey": "UserService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "user.write", "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/users/create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/resend",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/users/resend",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write", "associationusers.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/approve",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/users/approve",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write", "associationusers.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/delete",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/users/delete",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/role",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/roles/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/role/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/roles/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/role/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/roles/update",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/role/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/roles/create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/scope",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/scopes/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/scope/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/scopes/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/scope/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/scopes/update",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/scope/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/scopes/create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "users.write" ]
+      }
+    },
+    // end of user management controllers
+    // terms management controllers
+    {
+      "DownstreamPathTemplate": "/api/terms",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/terms/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "terms.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/terms/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/terms/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "terms.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/terms/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/terms/update",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "terms.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/terms/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/terms/create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "terms.admin" ]
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/terms/activate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/terms/activate",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "terms.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/terms/clone",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/terms/clone",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "terms.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/terms/public",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/terms/public/get",
+      "UpstreamhttpMethod": [ "Get" ]
+    },
+    // end of terms management controllers
+    // newsletter subscription management controllers
+    {
+      "DownstreamPathTemplate": "/api/newsletter/lists",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/newsletter/get/lists",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "newsletter.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/newsletter",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/newsletter/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "newsletter.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/newsletter/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/newsletter/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "newsletter.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/newsletter/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/newsletter/update",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "newsletter.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/newsletter/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/newsletter/create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "newsletter.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/newsletter/delete",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/newsletter/delete",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "newsletter.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/newsletter/public/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/newsletter/subscribe",
+      "UpstreamhttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/newsletter/public/delete",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpuserservice",
+          "Port": 3020
+        }
+      ],
+      "UpstreamPathTemplate": "/newsletter/unsubscribe",
+      "UpstreamhttpMethod": [ "Delete" ]
+    },
+    // end of newsletter subscription management controllers
+    // Ends User service routes
+    // Email service routes
+    {
+      "DownstreamPathTemplate": "/api/settings",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpemailservice",
+          "Port": 3010
+        }
+      ],
+      "UpstreamPathTemplate": "/emailsettings/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "EmailService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "settings.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/settings/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpemailservice",
+          "Port": 3010
+        }
+      ],
+      "UpstreamPathTemplate": "/emailsettings/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "SwaggerKey": "EmailService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "settings.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/settings/test/sendemail",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpemailservice",
+          "Port": 3010
+        }
+      ],
+      "UpstreamPathTemplate": "/email/test/send",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "EmailService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "settings.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/settings/edit",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpemailservice",
+          "Port": 3010
+        }
+      ],
+      "UpstreamPathTemplate": "/emailsettings/edit",
+      "UpstreamHttpMethod": [ "Put" ],
+      "SwaggerKey": "EmailService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "settings.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/emailTemplates",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpemailservice",
+          "Port": 3010
+        }
+      ],
+      "UpstreamPathTemplate": "/emailTemplates/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "EmailService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "email.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/emailTemplates/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpemailservice",
+          "Port": 3010
+        }
+      ],
+      "UpstreamPathTemplate": "/emailTemplates/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "SwaggerKey": "EmailService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "email.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/emailTemplates/edit",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpemailservice",
+          "Port": 3010
+        }
+      ],
+      "UpstreamPathTemplate": "/emailTemplates/edit",
+      "UpstreamHttpMethod": [ "Put" ],
+      "SwaggerKey": "EmailService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "email.admin" ]
+      }
+    },
+    // End Email service routes
+    // start content management service routes
+    {
+      "DownstreamPathTemplate": "/api/banner",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "ContentManagementService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "cms.read", "cms.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/banner/public",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/get/public",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "ContentManagementService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/banner/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/get/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "SwaggerKey": "ContentManagementService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "cms.read", "cms.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/banner/update",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/update",
+      "UpstreamHttpMethod": [ "Put" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "cms.write" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/banner/register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpcmservice",
+          "Port": 3030
+        }
+      ],
+      "UpstreamPathTemplate": "/cms/banner/create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "cms.write" ]
+      }
+    },
+    // End content management service routes
+    // notifications service routes
+    // End notifications service routes
+    // News blog service routes
+    {
+      "DownstreamPathTemplate": "/api/news/settings/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpnewservice",
+          "Port": 3050
+        }
+      ],
+      "UpstreamPathTemplate": "/newsblogsettings/get",
+      "UpstreamHttpMethod": [ "Get" ],
+      "SwaggerKey": "NewsService"
+    },
+    {
+      "DownstreamPathTemplate": "/api/news/settings/{id}/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpnewservice",
+          "Port": 3050
+        }
+      ],
+      "UpstreamPathTemplate": "/newsblogsettings/{id}",
+      "UpstreamhttpMethod": [ "Get" ],
+      "SwaggerKey": "NewsService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "newsblog.admin" ]
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/news/settings/{id}/",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tpnewservice",
+          "Port": 3050
+        }
+      ],
+      "UpstreamPathTemplate": "/newsblogsettings/edit/{id}",
+      "UpstreamHttpMethod": [ "Put" ],
+      "SwaggerKey": "NewsService",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TpAuthKey",
+        "AllowedScopes": [ "newsblog.admin" ]
+      }
+    }
+    // End news blog service routes
+  ],
+  "DelegatingHandlers": [
+    "HeaderDelegatingHandler"
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "UserService",
+      "Config": [
+        {
+          "Name": "UserService API",
+          "Version": "v1",
+          "Url": "http://tpuserservice:3020/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "EmailService",
+      "Config": [
+        {
+          "Name": "EmailService API",
+          "Version": "v1",
+          "Url": "http://tpemailservice:3010/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "ContentManagementService",
+      "Config": [
+        {
+          "Name": "ContentManagementService API",
+          "Version": "v1",
+          "Url": "http://tpcmservice:3030/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "NotificationsService",
+      "Config": [
+        {
+          "Name": "NotificationsService API",
+          "Version": "v1",
+          "Url": "http://tpnotificationservice:3040/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "NewsService",
+      "Config": [
+        {
+          "Name": "NewsService API",
+          "Version": "v1",
+          "Url": "http://tpnewservice:3050/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}

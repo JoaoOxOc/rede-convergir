@@ -1,0 +1,14 @@
+[
+  {
+    "model": "NewsServiceApp.Setting",
+    "pk": 1,
+    "fields": {
+      "Key": "DisplayBlogAuthor",
+      "Value": "true",
+      "DefaultValue": "true",
+      "Description": "Define se uma publicacao de blog devera apresentar dados do seu autor",
+      "SettingType": "5",
+      "CreatedAt": "2021-05-02T13:20:30"
+    }
+  }
+]
